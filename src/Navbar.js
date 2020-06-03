@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-export const Navbar = (props) => {
+export const Navbar = ({title}) => {
   return(
     <View style={styles.navbar}>
       <Text style={styles.navbarText}>
-        Navbar 4 my app
+        {title}
       </Text>
     </View>
   )
@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
   },
   navbarText: {
+    textAlign: 'center',
+    color: 'snow',
+    fontSize: 24,
+    letterSpacing: 2,
     lineHeight: 48
   }
 })
