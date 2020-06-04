@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Navbar } from './src/Navbar'
+import React, {useState} from 'react'
+import { StyleSheet, Text, View } from 'react-native'
+import { Navbar }     from './src/Navbar'
 import { AddToDoItem} from './src/AddToDoItem'
+import { Todo }       from './src/TemplateToDo'
 
 export default function App() {
   const [todos, setTodos] = useState([])
