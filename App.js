@@ -1,11 +1,23 @@
 import React, {useState} from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, Keyboard, TouchableOpacity, Fragment } from 'react-native'
 import { Navbar }     from './src/Navbar'
 import { AddToDoItem} from './src/AddToDoItem'
 import { Todo }       from './src/TemplateToDo'
 
 export default function App() {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState([
+    {id: '1', title: 'Дело номер РАЗ' },
+    {id: '2', title: 'Дело номер ДВА' },
+    {id: '3', title: 'Дело номер ТРИ' },
+    {id: '4', title: 'Дело номер ЧЕТЫРЕ' },
+    {id: '5', title: 'Дело номер ПЯТЬ' },
+    {id: '6', title: 'Дело номер ШЕСТЬ' },
+    {id: '7', title: 'Дело номер СЕМЬ' },
+    {id: '8', title: 'Дело номер ВОСЕМЬ' },
+    {id: '9', title: 'Дело номер ДЕВЯТЬ' },
+    {id: '10', title: 'Дело номер ДЕСЯТЬ' },
+    {id: '11', title: 'Дело номер ОДИННАДЦАТЬ' }
+  ])
 
   const addTodo = (title) => {
     // const newTodo = {
@@ -13,7 +25,7 @@ export default function App() {
     //   title: title
     // }
 
-    setTodos(prev => [...prev, {
+    setTodos([...todos, {
       id: Date.now().toString(),
       title
     }])
@@ -28,15 +40,32 @@ export default function App() {
     // setTodos(todos.concat([newTodo]))
   }
   return (
-    <View>
+    <View onPress={ () => Keyboard.dismiss()}>
       <Navbar title='ToDoAPP' />
       <View style={styles.container}>
         <AddToDoItem onSubmit={addTodo}/>
-        <View> { todos.map(todo => (<Todo todo={todo} key={todo.id} />) ) } </View>
-
-        <Text style={styles.textfont}> WELLCOME TO NATIVE DEV! </Text>
-      </View>
+        <ScrollView>
+          { todos.map(todo => (
+          <Todo todo={todo} key={todo.id} />
+          ) ) }
+        </ScrollView>
+          {/* <Text style={styles.textfont}> WELLCOME TO NATIVE DEV! </Text> */}
+        </View>
     </View>
+    // <View>
+    //   <TouchableOpacity onPress={ () => Keyboard.dismiss()}>
+    //   <Navbar title='ToDoAPP' />
+    //   <View style={styles.container}>
+    //     <AddToDoItem onSubmit={addTodo}/>
+    //     <ScrollView>
+    //       { todos.map(todo => (
+    //       <Todo todo={todo} key={todo.id} />
+    //       ) ) }
+    //     </ScrollView>
+    //       {/* <Text style={styles.textfont}> WELLCOME TO NATIVE DEV! </Text> */}
+    //     </View>
+    //   </TouchableOpacity>
+    // </View>
   );
 }
 

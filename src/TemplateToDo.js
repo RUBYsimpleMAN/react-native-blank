@@ -5,6 +5,7 @@ export const Todo = ({todo}) => {
   return(
     <View style={styles.todoItem}>
       <Text style={styles.todoItemText}>
+        {/* текст вместо todo.title */}
         {todo.title}
       </Text>
     </View>
@@ -19,13 +20,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'silver',
     borderRadius: 5,
+    marginVertical: '1%',
     backgroundColor: 'lightblue',
   },
   todoItemText: {
     // textAlign: 'center',
-    color: 'snow',
-    fontSize: 24,
+    // color: 'snow',
+    fontSize: 14,
     letterSpacing: 2,
-    lineHeight: 48
+    lineHeight: 24
   }
 })
