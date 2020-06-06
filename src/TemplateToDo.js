@@ -1,11 +1,10 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
 export const Todo = ({todo}) => {
   return(
     <View style={styles.todoItem}>
       <Text style={styles.todoItemText}>
-        {/* текст вместо todo.title */}
         {todo.title}
       </Text>
     </View>

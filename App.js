@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { StyleSheet, Text, View, ScrollView, Keyboard, TouchableOpacity, Fragment } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, Keyboard, FlatList } from 'react-native'
 import { Navbar }     from './src/Navbar'
 import { AddToDoItem} from './src/AddToDoItem'
 import { Todo }       from './src/TemplateToDo'
@@ -44,14 +44,37 @@ export default function App() {
       <Navbar title='ToDoAPP' />
       <View style={styles.container}>
         <AddToDoItem onSubmit={addTodo}/>
-        <ScrollView>
+
+        <FlatList
+          keyExtractor={item => item.id.toString()}
+          data={todos}
+          renderItem={({item}) => (
+            <Todo todo={item} />
+          )}
+        />
+
+        {/* <ScrollView>
           { todos.map(todo => (
           <Todo todo={todo} key={todo.id} />
           ) ) }
-        </ScrollView>
-          {/* <Text style={styles.textfont}> WELLCOME TO NATIVE DEV! </Text> */}
-        </View>
+          <Text style={styles.textfont}> WELLCOME TO NATIVE DEV! </Text>
+        </ScrollView> */}
+      </View>
     </View>
+    // ---------------------------------
+    // <View onPress={ () => Keyboard.dismiss()}>
+    //   <Navbar title='ToDoAPP' />
+    //   <View style={styles.container}>
+    //     <AddToDoItem onSubmit={addTodo}/>
+    //     <ScrollView>
+    //       { todos.map(todo => (
+    //       <Todo todo={todo} key={todo.id} />
+    //       ) ) }
+    //       <Text style={styles.textfont}> WELLCOME TO NATIVE DEV! </Text>
+    //     </ScrollView>
+    //   </View>
+    // </View>
+    // ---------------------------------
     // <View>
     //   <TouchableOpacity onPress={ () => Keyboard.dismiss()}>
     //   <Navbar title='ToDoAPP' />
