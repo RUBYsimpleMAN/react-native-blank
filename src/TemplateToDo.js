@@ -1,10 +1,11 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
-export const Todo = ({todo}) => {
+export const Todo = ({todo, onRemove}) => {
   return(
     <TouchableOpacity activeOpacity={0.7}
-                      onPress={() => console.log('Pressed', todo.id)}>
+                      onPress={() => console.log('Pressed', todo.id)}
+                      onLongPress={onRemove.bind(null, todo.id)}>
       <View style={styles.todoItem}>
         <Text style={styles.todoItemText}>
           {todo.title}
@@ -13,6 +14,37 @@ export const Todo = ({todo}) => {
     </TouchableOpacity>
   )
 };
+
+// export const Todo = ({todo, onRemove}) => {
+//   const onLongPressHandler = () => {
+//     onRemove(todo.id)
+//   }
+//   return(
+//     <TouchableOpacity activeOpacity={0.7}
+//                       onPress={() => console.log('Pressed', todo.id)}
+//                       onLongPress={() => onLongPressHandler}>
+//       <View style={styles.todoItem}>
+//         <Text style={styles.todoItemText}>
+//           {todo.title}
+//         </Text>
+//       </View>
+//     </TouchableOpacity>
+//   )
+// };
+
+// export const Todo = ({todo, onRemove}) => {
+//   return(
+//     <TouchableOpacity activeOpacity={0.7}
+//                       onPress={() => console.log('Pressed', todo.id)}
+//                       onLongPress={() => onRemove(todo.id)}>
+//       <View style={styles.todoItem}>
+//         <Text style={styles.todoItemText}>
+//           {todo.title}
+//         </Text>
+//       </View>
+//     </TouchableOpacity>
+//   )
+// };
 
 const styles = StyleSheet.create({
   todoItem: {

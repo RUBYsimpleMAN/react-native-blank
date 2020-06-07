@@ -25,14 +25,25 @@ export default function App() {
     //   title: title
     // }
 
-    setTodos(prev => [
-      ...prev,
-      {
-      id: Date.now().toString(),
-      title
-      }
-    ])
+    // setTodos(prev => [
+    //   ...prev,
+    //   {
+    //   id: Date.now().toString(),
+    //   title
+    //   }
+    // ])
 
+      setTodos(prev => {
+      console.log("prev ", prev)
+    return [
+        ...prev,
+        {
+        id: Date.now().toString(),
+        title
+        }
+      ]
+    })
+   
     // setTodos([...todos, {
     //   id: Date.now().toString(),
     //   title
@@ -47,6 +58,14 @@ export default function App() {
 
     // setTodos(todos.concat([newTodo]))
   }
+
+  const rmTodoItem = id => {
+    setTodos(prev => prev.filter(
+      todo => todo.id !==id
+    ))
+  }
+
+
   return (
     <View onPress={ () => Keyboard.dismiss()}>
       <Navbar title='ToDoAPP' />
@@ -57,7 +76,8 @@ export default function App() {
           keyExtractor={item => item.id.toString()}
           data={todos}
           renderItem={({item}) => (
-            <Todo todo={item} />
+            <Todo todo={item}
+                  onRemove={rmTodoItem}/>
           )}
         />
 
