@@ -19,16 +19,24 @@ export default function App() {
     {id: '11', title: 'Дело номер ОДИННАДЦАТЬ' }
   ])
 
-  const addTodo = (title) => {
+  const addTodo = title => {
     // const newTodo = {
     //   id: Date.now().toString(),
     //   title: title
     // }
 
-    setTodos([...todos, {
+    setTodos(prev => [
+      ...prev,
+      {
       id: Date.now().toString(),
       title
-    }])
+      }
+    ])
+
+    // setTodos([...todos, {
+    //   id: Date.now().toString(),
+    //   title
+    // }])
 
     // setTodos((prevTodos) => {
     //   return[
@@ -96,6 +104,7 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: '2%',
     paddingVertical: '2%',
+    paddingBottom: '23%',
     // flex: 1,
     // backgroundColor: '#fff',
     // alignItems: 'center',

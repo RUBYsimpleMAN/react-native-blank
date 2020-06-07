@@ -3,11 +3,14 @@ import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
 export const Todo = ({todo}) => {
   return(
-    <View style={styles.todoItem}>
-      <Text style={styles.todoItemText}>
-        {todo.title}
-      </Text>
-    </View>
+    <TouchableOpacity activeOpacity={0.7}
+                      onPress={() => console.log('Pressed', todo.id)}>
+      <View style={styles.todoItem}>
+        <Text style={styles.todoItemText}>
+          {todo.title}
+        </Text>
+      </View>
+    </TouchableOpacity>
   )
 };
 
