@@ -5,7 +5,6 @@ export const AddToDoItem = ({onSubmit}) => {
   const [value, setValue] = useState('')
 
   const pressHandler = () => {
-    // onSubmit('Long and Long String Test ToDo Item')
     if (value.trim()){
       onSubmit(value)
       setValue('')
@@ -17,7 +16,6 @@ export const AddToDoItem = ({onSubmit}) => {
   return(
     <View style={styles.block}>
       <TextInput  style={styles.input}
-               // onChangeText={text => serValue(text)}
                   onChangeText={setValue}
                   value={value}
                   placeholder='У Вас есть план мистер Фикс?..'
@@ -26,20 +24,15 @@ export const AddToDoItem = ({onSubmit}) => {
       />
       <Button style={styles.btn} title='AddItem' onPress={pressHandler} />
     </View>
-// <Text style={}> </Text>
   )
 };
 
 const styles = StyleSheet.create({
   block: {
-    // flexDirection: 'row',
-    // justifyContent: 'space-between'
-    // backgroundColor: 'lightblue',
   },
   input: {
     marginVertical: '1%',
     paddingHorizontal: '2%',
-    // width: '70%',
     borderBottomColor: 'red',
     borderStyle: 'solid',
     borderBottomWidth: 1.2,

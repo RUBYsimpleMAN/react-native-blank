@@ -1,19 +1,17 @@
 {
   "expo": {
-    "name": "react-native-blank",
-    "slug": "react-native-blank",
+    "name": "SclerossoApplicatto",
+    "slug": "SclerossoApplicattoLaPotentia",
     "platforms": [
-      "ios",
-      "android",
-      "web"
+      "android"
     ],
-    "version": "1.0.0",
+    "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#34495e"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,8 +19,9 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
+    "android": {  
+    "package": "com.RomAmoR.SclerossoApplicatto",
+    "versionCode": 1                       
     }
   }
 }

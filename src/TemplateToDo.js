@@ -15,37 +15,6 @@ export const Todo = ({todo, onRemove}) => {
   )
 };
 
-// export const Todo = ({todo, onRemove}) => {
-//   const onLongPressHandler = () => {
-//     onRemove(todo.id)
-//   }
-//   return(
-//     <TouchableOpacity activeOpacity={0.7}
-//                       onPress={() => console.log('Pressed', todo.id)}
-//                       onLongPress={() => onLongPressHandler}>
-//       <View style={styles.todoItem}>
-//         <Text style={styles.todoItemText}>
-//           {todo.title}
-//         </Text>
-//       </View>
-//     </TouchableOpacity>
-//   )
-// };
-
-// export const Todo = ({todo, onRemove}) => {
-//   return(
-//     <TouchableOpacity activeOpacity={0.7}
-//                       onPress={() => console.log('Pressed', todo.id)}
-//                       onLongPress={() => onRemove(todo.id)}>
-//       <View style={styles.todoItem}>
-//         <Text style={styles.todoItemText}>
-//           {todo.title}
-//         </Text>
-//       </View>
-//     </TouchableOpacity>
-//   )
-// };
-
 const styles = StyleSheet.create({
   todoItem: {
     flexDirection: 'row',
@@ -58,8 +27,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightblue',
   },
   todoItemText: {
-    // textAlign: 'center',
-    // color: 'snow',
     fontSize: 14,
     letterSpacing: 2,
     lineHeight: 24

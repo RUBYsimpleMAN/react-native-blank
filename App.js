@@ -20,21 +20,7 @@ export default function App() {
   ])
 
   const addTodo = title => {
-    // const newTodo = {
-    //   id: Date.now().toString(),
-    //   title: title
-    // }
-
-    // setTodos(prev => [
-    //   ...prev,
-    //   {
-    //   id: Date.now().toString(),
-    //   title
-    //   }
-    // ])
-
       setTodos(prev => {
-      console.log("prev ", prev)
     return [
         ...prev,
         {
@@ -43,20 +29,6 @@ export default function App() {
         }
       ]
     })
-   
-    // setTodos([...todos, {
-    //   id: Date.now().toString(),
-    //   title
-    // }])
-
-    // setTodos((prevTodos) => {
-    //   return[
-    //     ...prevTodos,
-    //     newTodo
-    //   ]
-    // })
-
-    // setTodos(todos.concat([newTodo]))
   }
 
   const rmTodoItem = id => {
@@ -64,7 +36,6 @@ export default function App() {
       todo => todo.id !==id
     ))
   }
-
 
   return (
     <View onPress={ () => Keyboard.dismiss()}>
@@ -80,43 +51,8 @@ export default function App() {
                   onRemove={rmTodoItem}/>
           )}
         />
-
-        {/* <ScrollView>
-          { todos.map(todo => (
-          <Todo todo={todo} key={todo.id} />
-          ) ) }
-          <Text style={styles.textfont}> WELLCOME TO NATIVE DEV! </Text>
-        </ScrollView> */}
       </View>
     </View>
-    // ---------------------------------
-    // <View onPress={ () => Keyboard.dismiss()}>
-    //   <Navbar title='ToDoAPP' />
-    //   <View style={styles.container}>
-    //     <AddToDoItem onSubmit={addTodo}/>
-    //     <ScrollView>
-    //       { todos.map(todo => (
-    //       <Todo todo={todo} key={todo.id} />
-    //       ) ) }
-    //       <Text style={styles.textfont}> WELLCOME TO NATIVE DEV! </Text>
-    //     </ScrollView>
-    //   </View>
-    // </View>
-    // ---------------------------------
-    // <View>
-    //   <TouchableOpacity onPress={ () => Keyboard.dismiss()}>
-    //   <Navbar title='ToDoAPP' />
-    //   <View style={styles.container}>
-    //     <AddToDoItem onSubmit={addTodo}/>
-    //     <ScrollView>
-    //       { todos.map(todo => (
-    //       <Todo todo={todo} key={todo.id} />
-    //       ) ) }
-    //     </ScrollView>
-    //       {/* <Text style={styles.textfont}> WELLCOME TO NATIVE DEV! </Text> */}
-    //     </View>
-    //   </TouchableOpacity>
-    // </View>
   );
 }
 
@@ -125,15 +61,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: '2%',
     paddingVertical: '2%',
     paddingBottom: '23%',
-    // flex: 1,
-    // backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-  },
-  textfont: {
-    color: 'red',
-    fontSize: 20,
-    letterSpacing: 2,
-    // lineHeight: 2
   },
 });
