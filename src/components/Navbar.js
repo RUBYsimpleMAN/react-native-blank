@@ -14,6 +14,7 @@ export const Navbar = ({title}) => {
 const styles = StyleSheet.create({
   navbar: {
     backgroundColor: 'blue',
+    marginTop: '5%',
   },
   navbarText: {
     textAlign: 'center',

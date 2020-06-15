@@ -38,14 +38,21 @@ export default function App() {
     ))
   }
 
+  // const openTodoItem = id => {
+  //   setTodoId(id)
+  // }
+
   let content = (
     <MainScreen todos={todos}
                 addTodo={addTodo}
-                rmTodoItem={rmTodoItem}/>
+                rmTodoItem={rmTodoItem}
+                openTodoItem={id => {
+                  setTodoId(id)
+                }} />
   )
 
   if (todoId) {
-    content = <TodoScreen />
+    content = <TodoScreen goBack={() => setTodoId(null)} />
   }
 
   return (
