@@ -38,17 +38,13 @@ export default function App() {
     ))
   }
 
-  // const openTodoItem = id => {
-  //   setTodoId(id)
-  // }
+  const openTodoItem = id => setTodoId(id)
 
   let content = (
     <MainScreen todos={todos}
                 addTodo={addTodo}
                 rmTodoItem={rmTodoItem}
-                openTodoItem={id => {
-                  setTodoId(id)
-                }} />
+                openTodoItem={openTodoItem} />
   )
 
   if (todoId) {
@@ -59,7 +55,9 @@ export default function App() {
     <View onPress={ () => Keyboard.dismiss()}>
       <Navbar title='ToDoAPP' />
       <View style={styles.container}>
+      <Text>  
         {content}
+      </Text>
       </View>
     </View>
   );

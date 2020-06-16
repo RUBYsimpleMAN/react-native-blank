@@ -4,9 +4,8 @@ import {View, Text, Button, StyleSheet} from 'react-native';
 export const TodoScreen = ({ goBack }) => {
   return(
     <View style={styles.todoScreenView}>
-      <Text style={styles.todoScreenText}>
-        <Button title='Back' onPress={goBack} />
-      </Text>
+      <Text style={styles.todoScreenText}> Todo Screen </Text>
+      <Button title='Back' onPress={goBack} />
     </View>
   )
 };
