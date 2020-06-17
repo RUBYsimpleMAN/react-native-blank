@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import { THEME } from '../themes/themes';
 
 export const Todo = ({todo, onRemove, onOpen}) => {
   return(
@@ -28,8 +29,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightblue',
   },
   todoItemText: {
-    fontSize: 14,
+    fontSize: 20,
     letterSpacing: 2,
-    lineHeight: 24
+    lineHeight: 40,
+    color: THEME.TEXT_DARK_COLOR
   }
 })

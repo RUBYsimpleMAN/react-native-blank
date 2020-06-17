@@ -1155,9 +1155,9 @@
   integrity sha512-/jUNmS8d4bCKdqslfxW6dg/9Gksfzxz67IYfqApHn+HvHlMVXwYv2zpTDnS/yaK9BB0i0GlBTaYci0EFE62Hmw==
 
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.2.tgz#79d7a78bad4219f4c03d6557a1c72d9ca6ba62d5"
-  integrity sha512-rsZg7eL+Xcxsxk2XlBt9KcG8nOp9iYdKCOikY9x2RFJCyOdNj4MKPQty0e8oZr29vVAzKXr1BmR+kZauti3o1w==
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.3.tgz#4ba8ddb720221f432e443bd5f9117fd22cfd4762"
+  integrity sha512-sz7iLqvVUg1gIedBOvlkxPlc8/uVzyS5OwGz1cKjXzkl3FpL3al0crU8YGU1WoHkxn0Wxbw5tyi6hvzJKNzFsw==
 
 "@types/istanbul-lib-report@*":
   version "3.0.0"
@@ -1182,9 +1182,9 @@
     "@types/lodash" "*"
 
 "@types/lodash@*":
-  version "4.14.154"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.154.tgz#069e3c703fdb264e67be9e03b20a640bc0198ecc"
-  integrity sha512-VoDZIJmg3P8vPEnTldLvgA+q7RkIbVkbYX4k0cAVFzGAOQwUehVgRHgIr2/wepwivDst/rVRqaiBSjCXRnoWwQ==
+  version "4.14.155"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.155.tgz#e2b4514f46a261fd11542e47519c20ebce7bc23a"
+  integrity sha512-vEcX7S7aPhsBCivxMwAANQburHBtfN9RdyXFk84IJmu2Z4Hkg1tOFgaslRiEqqvoLtbCBi6ika1EMspE+NZ9Lg==
 
 "@types/qs@^6.5.1":
   version "6.9.3"
@@ -1526,9 +1526,9 @@ babel-preset-fbjs@^3.1.2, babel-preset-fbjs@^3.2.0:
     babel-plugin-syntax-trailing-function-commas "^7.0.0-beta.0"
 
 badgin@^1.1.2:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/badgin/-/badgin-1.1.4.tgz#5a8e2b81e812d3c4af7bacc2e62b36a9a5e40de5"
-  integrity sha512-BQ1m7TA7IehXb3/9b3cNH6TwIKcdqqJa/E4Z4fO40tSs6HPZWopPvx9QgHeUEd6Aays1BxQXjBpO+yrSYuRSOw==
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/badgin/-/badgin-1.1.8.tgz#6e4c930554945d31752e5de2d8a316036dccda5e"
+  integrity sha512-EGbhb5OwZreHS0vd8tFLzdWBqvz3dFREf1sYK5EtivtTDUkYCLSEKz1KvXJ4MBHAyKGDymx8wYPCQwrftQBifw==
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -1715,9 +1715,9 @@ camelcase@^5.0.0, camelcase@^5.3.1:
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
 caniuse-lite@^1.0.30001043:
-  version "1.0.30001066"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001066.tgz#0a8a58a10108f2b9bf38e7b65c237b12fd9c5f04"
-  integrity sha512-Gfj/WAastBtfxLws0RCh2sDbTK/8rJuSeZMecrSkNGYxPcv7EzblmDGfWQCFEQcSqYE2BRgQiJh8HOD07N5hIw==
+  version "1.0.30001084"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001084.tgz#00e471931eaefbeef54f46aa2203914d3c165669"
+  integrity sha512-ftdc5oGmhEbLUuMZ/Qp3mOpzfZLCxPYKcvGv6v2dJJ+8EdqcvZRbAGOiLmkM/PV1QGta/uwBs8/nCl6sokDW6w==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -2136,9 +2136,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.413:
-  version "1.3.455"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.455.tgz#fd65a3f5db6ffa83eb7c84f16ea9b1b7396f537d"
-  integrity sha512-4lwnxp+ArqOX9hiLwLpwhfqvwzUHFuDgLz4NTiU3lhygUzWtocIJ/5Vix+mWVNE2HQ9aI1k2ncGe5H/0OktMvA==
+  version "1.3.474"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.474.tgz#161af012e11f96795eade84bf03b8ddc039621b9"
+  integrity sha512-fPkSgT9IBKmVJz02XioNsIpg0WYmkPrvU1lUJblMMJALxyE7/32NGvbJQKKxpNokozPvqfqkuUqVClYsvetcLw==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -2790,9 +2790,9 @@ image-size@^0.6.0:
   integrity sha512-47xSUiQioGaB96nqtp5/q55m0aBQSQdyIloMOc/x+QVTDZLNmXE892IIDrJ0hM1A5vcNUDD5tDffkSP5lCaIIA==
 
 immediate@^3.2.2:
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.2.3.tgz#d140fa8f614659bd6541233097ddaac25cdd991c"
-  integrity sha1-0UD6j2FGWb1lQSMwl92qwlzdmRw=
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.3.0.tgz#1aef225517836bcdf7f2a2de2600c79ff0269266"
+  integrity sha512-HR7EVodfFUdQCTIeySw+WDRFJlPcLOJbXfwwZ7Oom6tjsvZ3bOkCDJHehQC3nxJrv7+f9XecwazynjU8e4Vw3Q==
 
 import-fresh@^2.0.0:
   version "2.0.0"
@@ -3119,9 +3119,9 @@ jest-worker@^24.6.0, jest-worker@^24.9.0:
     supports-color "^6.1.0"
 
 jetifier@^1.6.2:
-  version "1.6.5"
-  resolved "https://registry.yarnpkg.com/jetifier/-/jetifier-1.6.5.tgz#ea87324a4230bef20a9651178ecab978ee54a8cb"
-  integrity sha512-T7yzBSu9PR+DqjYt+I0KVO1XTb1QhAfHnXV5Nd3xpbXM6Xg4e3vP60Q4qkNU8Fh6PHC2PivPUNN3rY7G2MxcDQ==
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/jetifier/-/jetifier-1.6.6.tgz#fec8bff76121444c12dc38d2dad6767c421dab68"
+  integrity sha512-JNAkmPeB/GS2tCRqUzRPsTOHpGDah7xP18vGJfIjZC+W2sxEHbxgJxetIjIqhjQ3yYbYNEELkM/spKLtwoOSUQ==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
@@ -3814,9 +3814,9 @@ node-notifier@^5.2.1:
     which "^1.3.0"
 
 node-releases@^1.1.53:
-  version "1.1.57"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.57.tgz#f6754ce225fad0611e61228df3e09232e017ea19"
-  integrity sha512-ZQmnWS7adi61A9JsllJ2gdj2PauElcjnOwTp2O011iGzoakTxUsDGSe+6vD7wXbKdqhSFymC0OSx35aAMhrSdw==
+  version "1.1.58"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.58.tgz#8ee20eef30fa60e52755fcc0942def5a734fe935"
+  integrity sha512-NxBudgVKiRh/2aPWMgPR7bPTX0VPmGx5QBwCtdHitnqFE5/O8DeBXuIMH1nwNnw/aMo6AjOrpsHzfY3UbUJ7yg==
 
 noop-fn@^1.0.0:
   version "1.0.0"
@@ -4411,9 +4411,9 @@ regenerate-unicode-properties@^8.2.0:
     regenerate "^1.4.0"
 
 regenerate@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
-  integrity sha512-1G6jJVDWrt0rK99kBjvEtziZNCICAuvIPkSiUFIQxVP06RCVpq3dmDo2oi6ABpYaDYaTRr67BEhL8r1wgEZZKg==
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.1.tgz#cad92ad8e6b591773485fbe05a485caf4f457e6f"
+  integrity sha512-j2+C8+NtXQgEKWk49MMP5P/u2GhnahTtVkRIHr5R5lVRlbKvmQ+oS+A5aLKWp2ma5VkT8sh6v+v4hbH0YHR66A==
 
 regenerator-runtime@^0.13.2, regenerator-runtime@^0.13.4:
   version "0.13.5"

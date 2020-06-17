@@ -5,7 +5,7 @@ import {MainScreen} from './src/screens/MainScreen'
 import {TodoScreen} from './src/screens/TodoScreen'
 
 export default function App() {
-  const [todoId, setTodoId] = useState(null)
+  const [todoId, setTodoId] = useState('7') // null
   const [todos, setTodos] = useState([
     {id: '1',  title: 'Дело номер РАЗ' },
     {id: '2',  title: 'Дело номер ДВА' },
@@ -38,26 +38,26 @@ export default function App() {
     ))
   }
 
-  const openTodoItem = id => setTodoId(id)
+  // const openTodoItem = id => setTodoId(id)
 
   let content = (
     <MainScreen todos={todos}
                 addTodo={addTodo}
                 rmTodoItem={rmTodoItem}
-                openTodoItem={openTodoItem} />
+                openTodoItem={setTodoId} />
   )
 
   if (todoId) {
-    content = <TodoScreen goBack={() => setTodoId(null)} />
+    const selectedTodo=todos.find(todo => todo.id === todoId)
+    content = <TodoScreen goBack={() => setTodoId(null)}
+                          todo={selectedTodo} />
   }
 
   return (
     <View onPress={ () => Keyboard.dismiss()}>
       <Navbar title='ToDoAPP' />
       <View style={styles.container}>
-      <Text>  
         {content}
-      </Text>
       </View>
     </View>
   );
