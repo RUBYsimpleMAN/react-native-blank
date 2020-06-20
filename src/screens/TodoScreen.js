@@ -4,12 +4,18 @@ import {THEME} from '../themes/themes'
 import { AppCard } from '../components/ui/AppCard';
 import { EditModal } from '../components/EditModal';
 
-export const TodoScreen = ({ goBack, todo, onRemove }) => {
+export const TodoScreen = ({ goBack, todo, onRemove, onSave }) => {
   const [modal, setModal] = useState(false)
+  const saveHandler = title => {
+    onSave(todo.id, title)
+    setModal(false)
+  }
   return(
     <View style={styles.todoScreenView}>
       <EditModal  visibleProp={modal}
+                  value={todo.title}
                   onCancel={() => setModal(false)}
+                  onSave={saveHandler}
                   />
 
       <AppCard style={styles.card}>
@@ -21,7 +27,7 @@ export const TodoScreen = ({ goBack, todo, onRemove }) => {
           <Button title='Delete'
                   color={THEME.DANGER_COLOR}
                   onPress={() => onRemove(todo.id)} />
-                  {/* onPress={() => console.log('Will be Removed')} /> */}
+              {/* onPress={() => console.log('Will be Removed')} /> */}
         </View>
         <View style={styles.button}>
           <Button title='GoBack'

@@ -1,14 +1,26 @@
-import React from 'react';
-import {View, Modal, TextInput, Button, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {View, Modal, TextInput, Button, Alert, StyleSheet} from 'react-native';
 import { THEME } from '../themes/themes';
 
-export const EditModal = ({visibleProp, onCancel}) => {
+export const EditModal = ({visibleProp, onCancel, value, onSave}) => {
+  const [title, setTitle] = useState(value)
+  const saveHandlerModal = () => {
+    if(title.trim().length < 3) {
+      Alert.alert('Ой-вей... я Вас умоляю!..', 
+                  `Хотя бы 3 буковки чтобы меня уважить!.. 
+                  А здесь всего ${title.trim().length}..`)
+    } else {
+      onSave(title)
+    }
+  }
   return(
-    <Modal  visibleAttribute={visibleProp}
+    <Modal  visible={visibleProp}
             animationType='fade'
             transparent={false} >
       <View style={styles.wrap}>
-        <TextInput  placeholder='new text please'
+        <TextInput  placeholder='теперь это будет...'
+                    value={title}
+                    onChangeText={setTitle}
                     autoCapitalize='none'
                     autoCorrect={false}
                     style={styles.input} />
@@ -18,7 +30,8 @@ export const EditModal = ({visibleProp, onCancel}) => {
           </View>
           <View style={styles.button}>
             <Button title='Save'
-                    color='green' />
+                    color='green'
+                    onPress={saveHandlerModal} />
           </View>
         </View>
       </View>
@@ -35,7 +48,8 @@ const styles = StyleSheet.create({
   input: {
     padding: 10,
     borderBottomColor: THEME.USE_COLOR,
-    borderBottomWidth: 3,
+    borderWidth: 3,
+    height: 100,
     width: '96%',
     textAlign: 'center',
     color: THEME.DANGER_COLOR,
