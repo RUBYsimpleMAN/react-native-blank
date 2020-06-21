@@ -1,16 +1,17 @@
-import React from 'react';
-import { View, Image, FlatList, StyleSheet } from 'react-native';
+import React from 'react'
+import { FlatList, Image, View, StyleSheet } from 'react-native'
+
+import { THEME }       from '../themes/themes'
 import { AddToDoItem } from '../components/AddToDoItem'
 import { Todo }        from '../components/TemplateToDo'
-import { THEME } from '../themes/themes';
 
 export const MainScreen = ({addTodo, todos, rmTodoItem, openTodoItem}) => {
 
   let mainScreenContent = (
-    <FlatList
-    keyExtractor={item => item.id.toString()}
-    data={todos}
-    renderItem={({item}) => (
+    <FlatList style={styles.flatlist}
+              keyExtractor={item => item.id.toString()}
+              data={todos}
+              renderItem={({item}) => (
       <Todo todo={item}
             onRemove={rmTodoItem}
             onOpen={openTodoItem} />
@@ -38,24 +39,17 @@ const styles = StyleSheet.create({
   mainScreenView: {
     backgroundColor: THEME.BRAND_COLOR,
   },
-  mainScreenText: {
-    textAlign: 'center',
-    color: 'snow',
-    fontSize: 24,
-    letterSpacing: 2,
-    lineHeight: 48
+  flatlist: {
+    backgroundColor: THEME.BRAND_COLOR,
   },
   imgWrap: {
     alignItems: 'center',
     justifyContent: 'center',
-    // padding: 40,
     height:500
   },
   img: {
-    width: '60%',
-    height: '60%',
+    width: '50%',
+    height: '50%',
     resizeMode: 'contain',
-    // padding: 40,
-    // height:256
   }
 })

@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
-import {View, TextInput, Button, Alert, StyleSheet} from 'react-native';
+import React, {useState} from 'react'
+import { Alert, Button, TextInput, View, StyleSheet} from 'react-native'
+
 
 export const AddToDoItem = ({onSubmit}) => {
   const [value, setValue] = useState('')

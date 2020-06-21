@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, ScrollView, Keyboard, Alert } from 'react-native'
+import { Alert, Keyboard, View, StyleSheet } from 'react-native'
 import * as expoFont from 'expo-font'
 import { AppLoading } from 'expo'
 
-import { Navbar } from './src/components/Navbar'
-import { MainScreen } from './src/screens/MainScreen'
-import { TodoScreen } from './src/screens/TodoScreen'
+import { THEME }       from './src/themes/themes'
+import { Navbar }      from './src/components/Navbar'
+import { MainScreen }  from './src/screens/MainScreen'
+import { TodoScreen }  from './src/screens/TodoScreen'
 
 async function loadApplication() {
   await expoFont.loadAsync({
@@ -90,7 +91,8 @@ export default function App() {
   }
 
   return (
-    <View onPress={ () => Keyboard.dismiss()}>
+    <View  style={styles.appScoupe}
+           onPress={() => Keyboard.dismiss()}>
       <Navbar title='SclerozzIO' />
       <View style={styles.container}>
         {content}
@@ -100,9 +102,16 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  appScoupe: {
+    backgroundColor: THEME.BRAND_COLOR,
+    marginTop: '6%',
+    // padding: '2%',
+  },
   container: {
+    // flex: 1,
+    backgroundColor: THEME.BRAND_COLOR,
     paddingHorizontal: '2%',
     paddingVertical: '2%',
-    paddingBottom: '23%',
+    // paddingBottom: '27%',
   },
 });
