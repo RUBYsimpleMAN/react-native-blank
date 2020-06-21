@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightblue',
   },
   todoItemText: {
+    fontFamily: 'rLight',
     fontSize: 20,
     letterSpacing: 2,
     lineHeight: 40,
