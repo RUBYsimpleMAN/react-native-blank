@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, Modal, TextInput, Button, Alert, StyleSheet} from 'react-native';
+
 import { THEME } from '../themes/themes';
 
 export const EditModal = ({visibleProp, onCancel, value, onSave}) => {
@@ -7,8 +8,8 @@ export const EditModal = ({visibleProp, onCancel, value, onSave}) => {
   const saveHandlerModal = () => {
     if(title.trim().length < 3) {
       Alert.alert('Ой-вей... я Вас умоляю!..', 
-                  `Хотя бы 3 буковки чтобы меня уважить!.. 
-                  А здесь всего ${title.trim().length}..`)
+                  `Хотя бi 3 буковкі чтобi міня уважiть!.. 
+                  А здесь йiх всего ${title.trim().length}..`)
     } else {
       onSave(title)
     }
@@ -26,11 +27,13 @@ export const EditModal = ({visibleProp, onCancel, value, onSave}) => {
                     style={styles.input} />
         <View style={styles.buttons}>
           <View style={styles.button}>
-            <Button title='Cancel' onPress={onCancel} />
+            <Button title='Cancel'
+                    color={THEME.USE_COLOR}
+                    onPress={onCancel} />
           </View>
           <View style={styles.button}>
             <Button title='Save'
-                    color='green'
+                    color={THEME.ACCEPT_COLOR}
                     onPress={saveHandlerModal} />
           </View>
         </View>
@@ -41,30 +44,32 @@ export const EditModal = ({visibleProp, onCancel, value, onSave}) => {
 
 const styles = StyleSheet.create({
   wrap: {
-    flex: 1,
+    flex:            1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems:     'center',
+    backgroundColor: THEME.BRAND_COLOR
   },
   input: {
-    padding: 10,
-    borderBottomColor: THEME.USE_COLOR,
-    borderWidth: 3,
-    height: 100,
-    width: '96%',
-    textAlign: 'center',
-    color: THEME.DANGER_COLOR,
-    fontSize: 24,
-    letterSpacing: 2,
-    lineHeight: 48
+    padding:         10,
+    height:          100,
+    width:          '96%',
+    borderColor:     THEME.USE_COLOR,
+    borderWidth:     1,
+    backgroundColor: THEME.TEXT_SHINE_COLOR,
+    textAlign:      'center',
+    color:           THEME.DANGER_COLOR,
+    fontSize:        24,
+    letterSpacing:   2,
   },
   buttons: {
-    flexDirection: 'row',
+    flexDirection:  'row',
     justifyContent: 'center',
-    alignItems: 'center',
-    margin: 30,
-    width: '96%'
+    width:          '96%',
+    marginVertical: '5%',
+    paddingVertical: 10,
+    backgroundColor: THEME.USE_COLOR,
   },
   button: {
-    width: '50%',
+    width:          '50%',
   },
 })

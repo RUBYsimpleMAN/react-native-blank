@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Button, Text, View, StyleSheet } from 'react-native'
+import { Button, View, StyleSheet } from 'react-native'
 
 import { THEME }      from '../themes/themes'
 import { AppCard }    from '../components/ui/AppCard'
@@ -19,11 +19,14 @@ export const TodoScreen = ({ goBack, todo, onRemove, onSave }) => {
                   onCancel={() => setModal(false)}
                   onSave={saveHandler}
                   />
-
       <AppCard style={styles.card}>
         <TEXTrLIGHT style={styles.todoScreenText}> {todo.title} </TEXTrLIGHT>
+        <View style={styles.editButton}>
         <Button   title='Edit'
+                  color={THEME.USE_COLOR}
+                  width={'100%'}
                   onPress={() => setModal(true)}/>
+        </View>
       </AppCard>
       <View style={styles.buttons}>
         <View style={styles.button}>
@@ -37,6 +40,7 @@ export const TodoScreen = ({ goBack, todo, onRemove, onSave }) => {
                   onPress={goBack} />
         </View>
       </View>
+      <View style={styles.bottomSpan}></View>
     </View>
   )
 };
@@ -46,19 +50,33 @@ const styles = StyleSheet.create({
     backgroundColor: THEME.BRAND_COLOR,
   },
   todoScreenText: {
-    fontSize: 24,
-    letterSpacing: 2,
-    lineHeight: 48
+    fontSize:        24,
+    letterSpacing:   2,
+    lineHeight:      36,
+    padding:        '1%',
+    marginVertical: '10%',
   },
   card: {
-    marginBottom: 20,
-    padding: 100
+    marginBottom:    20,
+    paddingVertical: 6
+  },
+  editButton: {
+    width:          '100%',
+    marginVertical: '2%',
+    paddingVertical: 10,
+    backgroundColor: THEME.USE_COLOR
   },
   buttons: {
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+    flexDirection:  'row',
+    justifyContent: "flex-end",
+    marginVertical: '2%',
+    paddingVertical: 10,
+    backgroundColor: THEME.USE_COLOR
   },
   button: {
-    width: '50%',
+    width:          '49.8%',
+  },
+  bottomSpan: {
+    height:          800,
   },
 })

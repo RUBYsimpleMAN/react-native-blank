@@ -7,16 +7,7 @@ import { Todo }        from '../components/TemplateToDo'
 
 export const MainScreen = ({addTodo, todos, rmTodoItem, openTodoItem}) => {
 
-  let mainScreenContent = (
-    <FlatList style={styles.flatlist}
-              keyExtractor={item => item.id.toString()}
-              data={todos}
-              renderItem={({item}) => (
-      <Todo todo={item}
-            onRemove={rmTodoItem}
-            onOpen={openTodoItem} />
-    )} />
-  )
+  let mainScreenContent
 
   if (todos.length === 0) {
     mainScreenContent = (
@@ -24,6 +15,62 @@ export const MainScreen = ({addTodo, todos, rmTodoItem, openTodoItem}) => {
         <Image  style={styles.img}
                 source={require('../../assets/splash.png')} />
       </View>
+    )
+  }
+
+  if (todos.length === 1) {
+    mainScreenContent = (
+    <View>
+      <FlatList style={styles.flatlist}
+                keyExtractor={item => item.id.toString()}
+                data={todos}
+                renderItem={({item}) => (
+        <Todo todo={item}
+              onRemove={rmTodoItem}
+              onOpen={openTodoItem} />
+      )} />
+      <View style={styles.flatlistImgWrap01}>
+        <Image  style={styles.img}
+                source={require('../../assets/splash.png')} />
+      </View>
+      <View style={styles.imgWrap}></View>
+    </View>
+    )
+  }
+
+  if (todos.length === 2) {
+    mainScreenContent = (
+    <View>
+      <FlatList style={styles.flatlist}
+                keyExtractor={item => item.id.toString()}
+                data={todos}
+                renderItem={({item}) => (
+        <Todo todo={item}
+              onRemove={rmTodoItem}
+              onOpen={openTodoItem} />
+      )} />
+      <View style={styles.flatlistImgWrap02}>
+        <Image  style={styles.img}
+                source={require('../../assets/splash.png')} />
+      </View>
+      <View style={styles.imgWrap}></View>
+    </View>
+    )
+  }
+
+  if (todos.length > 2) {
+    mainScreenContent = (
+    <View>
+      <FlatList style={styles.flatlist}
+                keyExtractor={item => item.id.toString()}
+                data={todos}
+                renderItem={({item}) => (
+        <Todo todo={item}
+              onRemove={rmTodoItem}
+              onOpen={openTodoItem} />
+      )} />
+      <View style={styles.imgWrap}></View>
+    </View>
     )
   }
 
@@ -42,14 +89,23 @@ const styles = StyleSheet.create({
   flatlist: {
     backgroundColor: THEME.BRAND_COLOR,
   },
+  flatlistImgWrap01: {
+    alignItems:     'center',
+    padding:         30,
+    height:          420
+  },
+  flatlistImgWrap02: {
+    alignItems:     'center',
+    padding:         20,
+    height:          300
+  },
   imgWrap: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    height:500
+    alignItems:     'center',
+    height:          800,
   },
   img: {
-    width: '50%',
-    height: '50%',
-    resizeMode: 'contain',
+    width:          '50%',
+    height:         '50%',
+    resizeMode:     'contain',
   }
 })

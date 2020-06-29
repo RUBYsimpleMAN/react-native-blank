@@ -14,6 +14,6 @@ export const TEXTrLIGHT = props => {
 const styles = StyleSheet.create({
   font: {
     fontFamily: 'rLight',
-    color: THEME.TEXT_SHINE_COLOR
+    color:       THEME.TEXT_SHINE_COLOR
   }
 })

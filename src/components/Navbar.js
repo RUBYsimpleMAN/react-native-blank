@@ -16,7 +16,6 @@ export const Navbar = ({title}) => {
 const styles = StyleSheet.create({
   navbar: {
     backgroundColor: THEME.NAVBAR_COLOR,
-    marginTop: '5%',
     padding: '5%',
   },
   navbarText: {

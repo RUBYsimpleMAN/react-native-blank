@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity, View, StyleSheet} from 'react-native';
+import { TouchableOpacity, View, StyleSheet} from 'react-native';
 
 import { THEME }      from '../themes/themes';
 import { TEXTrLIGHT } from './ui/AppTextRobotoLight';
@@ -20,19 +20,17 @@ export const Todo = ({todo, onRemove, onOpen}) => {
 
 const styles = StyleSheet.create({
   todoItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 15,
-    borderWidth: 1,
-    borderColor: 'silver',
-    borderRadius: 5,
-    marginVertical: '10%',
+    alignItems:     'center',
+    padding:         25,
+    marginVertical: '1%',
+    borderWidth:     1,
+    borderColor:    'silver',
+    borderRadius:    5,
     backgroundColor: THEME.BRAND_COLOR,
   },
   todoItemText: {
-    fontSize: 20,
-    letterSpacing: 2,
-    lineHeight: 40,
-    // color: THEME.TEXT_DARK_COLOR
+    fontSize:        24,
+    letterSpacing:   1.2,
+    lineHeight:      36,
   }
 })
