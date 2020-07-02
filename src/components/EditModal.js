@@ -5,7 +5,16 @@ import { THEME } from '../themes/themes';
 
 export const EditModal = ({visibleProp, onCancel, value, onSave}) => {
   const [title, setTitle] = useState(value)
-  const saveHandlerModal = () => {
+  const wrapper1 = (...args) => {
+    console.log(args)
+    setTitle(...args)
+  }
+  const wrapper2 = (...args) => {
+    console.log(args)
+    onCancel(...args)
+  }
+  const saveHandlerModal = (...args) => {
+    console.log(args)
     if(title.trim().length < 3) {
       Alert.alert('Ой-вей... я Вас умоляю!..', 
                   `Хотя бi 3 буковкі чтобi міня уважiть!.. 
@@ -21,7 +30,7 @@ export const EditModal = ({visibleProp, onCancel, value, onSave}) => {
       <View style={styles.wrap}>
         <TextInput  placeholder='теперь это будет...'
                     value={title}
-                    onChangeText={setTitle}
+                    onChangeText={wrapper1}
                     autoCapitalize='none'
                     autoCorrect={false}
                     style={styles.input} />
@@ -29,7 +38,7 @@ export const EditModal = ({visibleProp, onCancel, value, onSave}) => {
           <View style={styles.button}>
             <Button title='Cancel'
                     color={THEME.USE_COLOR}
-                    onPress={onCancel} />
+                    onPress={wrapper2} />
           </View>
           <View style={styles.button}>
             <Button title='Save'
