@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Alert, Button, TextInput, View, StyleSheet} from 'react-native'
+import { Alert, Button, Keyboard, TextInput, View, StyleSheet} from 'react-native'
 
 import { THEME } from '../themes/themes';
 
@@ -10,6 +10,7 @@ export const AddToDoItem = ({onSubmit}) => {
     if (value.trim()){
       onSubmit(value)
       setValue('')
+      Keyboard.dismiss()
     }else{
       Alert.alert('Не может быть чтоб совсем ничего!!.')
     }

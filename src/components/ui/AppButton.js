@@ -1,22 +1,22 @@
 import React from 'react'
-import { TouchableOpacity, View, StyleSheet } from 'react-native'
+import { Platform, TouchableOpacity, TouchableNativeFeedback, View, StyleSheet } from 'react-native'
 
 import { TEXTrLIGHT } from './AppTextRobotoLight'
 import { THEME } from '../../themes/themes'
 
 export const AppButton = ({ children, onPress, color=THEME.DANGER_COLOR }) => {
-
-
+  const Wrapper = Platform.OS === 'android' ?
+                  TouchableNativeFeedback
+                  :
+                  TouchableOpacity
   return(
-    <TouchableOpacity onPress={onPress}>
+    <Wrapper onPress={onPress}>
       <View style={{...styles.button, backgroundColor: color}}>
         <TEXTrLIGHT>{children}</TEXTrLIGHT>
       </View>
-    </TouchableOpacity>
+    </Wrapper>
   )
 }
-
-
 
 const styles = StyleSheet.create({
   input: {

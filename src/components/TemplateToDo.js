@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     padding:         25,
     marginVertical: '1%',
     borderWidth:     1,
-    borderColor:    'silver',
+    borderColor:     THEME.TEXT_SHINE_COLOR,
     borderRadius:    5,
     backgroundColor: THEME.BRAND_COLOR,
   },

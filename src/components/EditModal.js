@@ -14,6 +14,7 @@ export const EditModal = ({visibleProp, onCancel, value, onSave}) => {
       onSave(title)
     }
   }
+
   return(
     <Modal  visible={visibleProp}
             animationType='fade'
@@ -63,7 +64,6 @@ const styles = StyleSheet.create({
   },
   buttons: {
     flexDirection:  'row',
-    justifyContent: 'center',
     width:          '96%',
     marginVertical: '5%',
     paddingVertical: 10,

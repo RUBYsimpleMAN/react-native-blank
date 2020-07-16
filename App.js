@@ -19,7 +19,27 @@ export default function App() {
   const [isReady, setIsReady] = useState(false)
   const [todoId, setTodoId] = useState(null)
   const [todos, setTodos] = useState([
-    // {id: '1',  title: 'Дело номер РАЗ' }
+    {id: '1',  title: 'Дело номер 1' },
+    {id: '2',  title: 'Дело номер 2' },
+    {id: '3',  title: 'Дело номер 3' },
+    {id: '4',  title: 'Дело номер 4' },
+    {id: '5',  title: 'Дело номер 5' },
+    {id: '6',  title: 'Дело номер 6' },
+    {id: '7',  title: 'Дело номер 7' },
+    {id: '8',  title: 'Дело номер 8' },
+    {id: '9',  title: 'Дело номер 9' },
+    {id: '10',  title: 'Дело номер 10' },
+    {id: '11',  title: 'Дело номер 11' },
+    {id: '12',  title: 'Дело номер 12' },
+    {id: '13',  title: 'Дело номер 13' },
+    {id: '14',  title: 'Дело номер 14' },
+    {id: '15',  title: 'Дело номер 15' },
+    {id: '16',  title: 'Дело номер 16' },
+    {id: '17',  title: 'Дело номер 17' },
+    {id: '18',  title: 'Дело номер 18' },
+    {id: '19',  title: 'Дело номер 19' },
+    {id: '20',  title: 'Дело номер 20' },
+    {id: '21',  title: 'Дело номер 21' }
   ])
 
   if (!isReady) {
@@ -103,15 +123,14 @@ export default function App() {
 
 const styles = StyleSheet.create({
   appScoupe: {
+    flex: 1,
     backgroundColor: THEME.BRAND_COLOR,
     marginTop: '6%',
-    // padding: '2%',
   },
   container: {
-    // flex: 1,
+    flex: 1,
     backgroundColor: THEME.BRAND_COLOR,
-    paddingHorizontal: '2%',
-    paddingVertical: '2%',
-    // paddingBottom: '27%',
+    padding: '2%',
+    paddingBottom: '12%'
   },
 });

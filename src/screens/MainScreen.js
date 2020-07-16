@@ -69,7 +69,7 @@ export const MainScreen = ({addTodo, todos, rmTodoItem, openTodoItem}) => {
               onRemove={rmTodoItem}
               onOpen={openTodoItem} />
       )} />
-      <View style={styles.imgWrap}></View>
+      {/* <View style={styles.imgWrap}></View> */}
     </View>
     )
   }
@@ -84,10 +84,13 @@ export const MainScreen = ({addTodo, todos, rmTodoItem, openTodoItem}) => {
 
 const styles = StyleSheet.create({
   mainScreenView: {
+    flex: 1,
     backgroundColor: THEME.BRAND_COLOR,
+    paddingBottom: 120,
   },
   flatlist: {
     backgroundColor: THEME.BRAND_COLOR,
+    // paddingBottom: '29%',
   },
   flatlistImgWrap01: {
     alignItems:     'center',
