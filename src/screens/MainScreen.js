@@ -84,13 +84,12 @@ export const MainScreen = ({addTodo, todos, rmTodoItem, openTodoItem}) => {
 
 const styles = StyleSheet.create({
   mainScreenView: {
-    flex: 1,
+    flex:            1,
     backgroundColor: THEME.BRAND_COLOR,
-    paddingBottom: 120,
+    paddingBottom:   128,
   },
   flatlist: {
     backgroundColor: THEME.BRAND_COLOR,
-    // paddingBottom: '29%',
   },
   flatlistImgWrap01: {
     alignItems:     'center',
