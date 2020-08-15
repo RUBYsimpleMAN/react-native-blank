@@ -6,12 +6,12 @@
       "android"
     ],
     "version": "0.0.5",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#0D2738"
+      "backgroundColor": "#1E3544"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
