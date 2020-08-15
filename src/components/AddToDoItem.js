@@ -35,8 +35,7 @@ export const AddToDoItem = ({onSubmit}) => {
 };
 
 const styles = StyleSheet.create({
-  block: {
-  },
+  block: {  },
   input: {
     marginVertical:    '2%',
     paddingHorizontal: '2%',

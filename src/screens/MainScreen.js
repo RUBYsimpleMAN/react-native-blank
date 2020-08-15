@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, Image, View, StyleSheet } from 'react-native'
+import { Dimensions, FlatList, Image, View, StyleSheet } from 'react-native'
 
 import { THEME }       from '../themes/themes'
 import { AddToDoItem } from '../components/AddToDoItem'
@@ -106,8 +106,8 @@ const styles = StyleSheet.create({
     height:          800,
   },
   img: {
-    width:          '50%',
-    height:         '50%',
+    width:           Dimensions.get('window') > 400 ? '75%' : '50%',
+    height:          Dimensions.get('window') > 400 ? '75%' : '50%',
     resizeMode:     'contain',
   }
 })
