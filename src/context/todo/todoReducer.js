@@ -1,6 +1,4 @@
-import {  CREATE_TODO, UPDATE_TODO, DELETE_TODO } from './todoActionTypes'
-
-// const initialState = []
+import { CREATE_TODO, UPDATE_TODO, DELETE_TODO } from './todoActionTypes'
 
 export const todoReducer = (state, action) => {
   switch(action.type) {
