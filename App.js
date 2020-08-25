@@ -3,7 +3,9 @@ import * as expoFont from 'expo-font'
 import { AppLoading } from 'expo'
 
 import { TodoState }  from './src/context/todo/TodoState'
+import { ScreenState }  from './src/context/screen/ScreenState'
 import { MainLayout } from './src/components/ui/MainLayout'
+import { screenReducer } from './src/context/screen/screenReducer'
 
 async function loadApplication() {
   await expoFont.loadAsync({
@@ -22,8 +24,10 @@ export default function App() {
   }
 
   return (
-    <TodoState>
-      <MainLayout />
-    </TodoState>
+    <ScreenState>
+      <TodoState>
+        <MainLayout />
+      </TodoState>
+    </ScreenState>
   )
 }
