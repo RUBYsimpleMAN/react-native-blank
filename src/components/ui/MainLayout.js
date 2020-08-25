@@ -6,33 +6,14 @@ import { Navbar }      from '../../components/Navbar'
 import { MainScreen }  from '../../screens/MainScreen'
 import { TodoScreen }  from '../../screens/TodoScreen'
 import { TodoContext } from '../../context/todo/todoContext'
+import { ScreenContext } from '../../context/screen/screenContext'
 
 
 //export default function MainLayout() {
 export const MainLayout = () => {
   const { todos, addTodo, updateTodo, rmTodoItem } = useContext(TodoContext)
-  const [todoId, setTodoId] = useState(null)
-  // const [todos, setTodos] = useState([
-  //   {id: '1',  title: 'Дело номер 1' },
-  //   {id: '2',  title: 'Дело номер 2' },
-  //   {id: '3',  title: 'Дело номер 3' },
-  //   // {id: '4',  title: 'Дело номер 4' },
-  //   // {id: '5',  title: 'Дело номер 5' },
-  //   // {id: '6',  title: 'Дело номер 6' },
-  //   // {id: '7',  title: 'Дело номер 7' }
-  // ])
+  const { todoId, toggleScreen } = useContext(ScreenContext)
 
-  // const addTodo = title => {
-  //     setTodos(prev => {
-  //   return [
-  //       ...prev,
-  //       {
-  //       id: Date.now().toString(),
-  //       title
-  //       }
-  //     ]
-  //   })
-  // }
 
   // const rmTodoItem = id => {
   //   const todo = todos.find(t => t.id === id)
@@ -58,30 +39,18 @@ export const MainLayout = () => {
   //   );
   // }
 
-  // const openTodoItem = id => setTodoId(id)
 
-  // const updateTodo = (id, title) => {
-  //   setTodos(old => old.map(todo => {
-  //     if (todo.id === id) {
-  //       todo.title = title
-  //     }
-  //     return todo
-  //   }))
-  // }
-
-  let content = (
-    <MainScreen todos={todos}
-                addTodo={addTodo}
-                rmTodoItem={rmTodoItem}
-                openTodoItem={setTodoId} />
-  )
+  let content = <MainScreen todos={todos}
+                            addTodo={addTodo}
+                            rmTodoItem={rmTodoItem}
+                            openTodoItem={toggleScreen} />
 
   if (todoId) {
     const selectedTodo=todos.find(todo => todo.id === todoId)
-    content = <TodoScreen goBack={() => setTodoId(null)}
-                          onRemove={rmTodoItem}
-                          onSave={updateTodo}
-                          todo={selectedTodo} />
+      content = <TodoScreen goBack={() => toggleScreen(null)}
+                            onRemove={rmTodoItem}
+                            onSave={updateTodo}
+                            todo={selectedTodo} />
   }
 
   return (

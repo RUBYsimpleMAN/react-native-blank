@@ -11,7 +11,7 @@ export const ScreenState = ({ children }) => {
 
   const toggleScreen = id => dispatch({ type: TOGGLE_SCREEN, payload: id })
 
-  return  <ScreenContext.Provider value={{toggleScreen,                                    
+  return  <ScreenContext.Provider value={{toggleScreen,
                                           todoId: state}}>
             { children }
           </ScreenContext.Provider>
