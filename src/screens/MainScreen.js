@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Dimensions, FlatList, Image, View, StyleSheet } from 'react-native'
 
 import { THEME }       from '../themes/themes'
 import { AddToDoItem } from '../components/AddToDoItem'
 import { Todo }        from '../components/TemplateToDo'
+import { TodoContext } from '../context/todo/todoContext'
+import { ScreenContext } from '../context/screen/screenContext'
 
-export const MainScreen = ({addTodo, todos, rmTodoItem, openTodoItem}) => {
+export const MainScreen = ({ openTodoItem}) => {
+  const { toggleScreen } = useContext(ScreenContext)
+  const { addTodo, todos, rmTodoItem } = useContext(TodoContext)
 
   let mainScreenContent
 
@@ -27,7 +31,7 @@ export const MainScreen = ({addTodo, todos, rmTodoItem, openTodoItem}) => {
                 renderItem={({item}) => (
         <Todo todo={item}
               onRemove={rmTodoItem}
-              onOpen={openTodoItem} />
+              onOpen={toggleScreen} />
       )} />
       <View style={styles.flatlistImgWrap01}>
         <Image  style={styles.img}
@@ -47,7 +51,7 @@ export const MainScreen = ({addTodo, todos, rmTodoItem, openTodoItem}) => {
                 renderItem={({item}) => (
         <Todo todo={item}
               onRemove={rmTodoItem}
-              onOpen={openTodoItem} />
+              onOpen={toggleScreen} />
       )} />
       <View style={styles.flatlistImgWrap02}>
         <Image  style={styles.img}
@@ -67,7 +71,7 @@ export const MainScreen = ({addTodo, todos, rmTodoItem, openTodoItem}) => {
                 renderItem={({item}) => (
         <Todo todo={item}
               onRemove={rmTodoItem}
-              onOpen={openTodoItem} />
+              onOpen={toggleScreen} />
       )} />
       {/* <View style={styles.imgWrap}></View> */}
     </View>
