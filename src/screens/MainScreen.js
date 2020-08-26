@@ -7,7 +7,7 @@ import { Todo }        from '../components/TemplateToDo'
 import { TodoContext } from '../context/todo/todoContext'
 import { ScreenContext } from '../context/screen/screenContext'
 
-export const MainScreen = ({ openTodoItem}) => {
+export const MainScreen = () => {
   const { toggleScreen } = useContext(ScreenContext)
   const { addTodo, todos, rmTodoItem } = useContext(TodoContext)
 
