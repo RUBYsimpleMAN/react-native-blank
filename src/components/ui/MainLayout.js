@@ -43,11 +43,7 @@ export const MainLayout = () => {
   let content = <MainScreen />
 
   if (todoId) {
-    const selectedTodo=todos.find(todo => todo.id === todoId)
-      content = <TodoScreen goBack={() => toggleScreen(null)}
-                            onRemove={rmTodoItem}
-                            onSave={updateTodo}
-                            todo={selectedTodo} />
+      content = <TodoScreen />
   }
 
   return (
