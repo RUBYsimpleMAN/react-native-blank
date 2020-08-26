@@ -40,10 +40,7 @@ export const MainLayout = () => {
   // }
 
 
-  let content = <MainScreen todos={todos}
-                            addTodo={addTodo}
-                            rmTodoItem={rmTodoItem}
-                            openTodoItem={toggleScreen} />
+  let content = <MainScreen />
 
   if (todoId) {
     const selectedTodo=todos.find(todo => todo.id === todoId)
