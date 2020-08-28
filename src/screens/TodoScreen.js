@@ -1,15 +1,22 @@
-import React, {useState} from 'react'
+import React, { useState, useContext } from 'react'
 import { Button, View, StyleSheet } from 'react-native'
 
-import { THEME }      from '../themes/themes'
-import { AppCard }    from '../components/ui/AppCard'
-import { EditModal }  from '../components/EditModal'
-import { TEXTrLIGHT } from '../components/ui/AppTextRobotoLight'
+import { THEME }         from '../themes/themes'
+import { AppCard }       from '../components/ui/AppCard'
+import { EditModal }     from '../components/EditModal'
+import { TEXTrLIGHT }    from '../components/ui/AppTextRobotoLight'
+import { TodoContext }   from '../context/todo/todoContext'
+import { ScreenContext } from '../context/screen/screenContext'
 
-export const TodoScreen = ({ goBack, todo, onRemove, onSave }) => {
+export const TodoScreen = () => {
+  const { todos, updateTodo, rmTodoItem } = useContext(TodoContext)
+  const { todoId, toggleScreen } = useContext(ScreenContext)
   const [modal, setModal] = useState(false)
+
+  const todo = todos.find(t => t.id === todoId)
+  
   const saveHandler = title => {
-    onSave(todo.id, title)
+    updateTodo(todo.id, title)
     setModal(false)
   }
   return(
@@ -32,12 +39,12 @@ export const TodoScreen = ({ goBack, todo, onRemove, onSave }) => {
         <View style={styles.button}>
           <Button title='Delete'
                   color={THEME.DANGER_COLOR}
-                  onPress={() => onRemove(todo.id)} />
+                  onPress={() => rmTodoItem(todo.id)} />
         </View>
         <View style={styles.button}>
           <Button title='GoBack'
                   color={THEME.USE_COLOR}
-                  onPress={goBack} />
+                  onPress={() => toggleScreen(null)} />
         </View>
       </View>
       <View style={styles.bottomSpan}></View>
